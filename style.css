@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #1f4037, #99f2c8);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 30px 40px;
+  color: #ffffff;
+  backdrop-filter: blur(15px);
+  text-align: center;
+  width: 280px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.calendar-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.1), transparent 70%);
+  animation: rotateGlow 6s linear infinite;
+  z-index: 0;
+}
+
+@keyframes rotateGlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.calendar-circle {
+  background: linear-gradient(135deg, #74ebd5, #acb6e5);
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+  z-index: 1;
+  position: relative;
+  color: #222;
+  transition: transform 0.3s;
+}
+
+.calendar-circle:hover {
+  transform: scale(1.05);
+}
+
+.calendar-circle #day {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.calendar-circle #date {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.calendar-details {
+  z-index: 1;
+  position: relative;
+}
+
+.calendar-details h2 {
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.calendar-details p {
+  font-size: 21px;
+  color: #dff9fb;
+  opacity: 0.9;
+}
